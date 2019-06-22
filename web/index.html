@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <!--<meta charset="utf-8"> -->
+     <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+    <meta http-equiv="Content-Language" content="zh-cn" />
+    <meta name="robots" content="all" />
+
+    <meta name="Author" content="Stu.NO:18031211355" />
+    <title>首页</title>
+</head>
+<body>
+    <div id="app">
+        <div v-show="false" style="text-align:center" id="info"><!--如果不支持Vue将会直接显示-->
+            <h1 style="color:#2d8cf0">Web应用加载中..</h1>
+            <p>正在载入页面数据，可能将持续1~2秒，请稍后......</p>
+            <p>如果长时间等待，请刷新页面后重试，或使用Chrome或FireFox浏览器以获得兼容性支持！</p>
+        </div>
+        
+        <!--主界面-->
+        <window-frame>
+            <transition slot="page_content" name='fade' mode="out-in" :duration="{ enter: 200, leave: 100 }">
+                <router-view></router-view>
+            </transition>
+        </window-frame>
+    </div>
+</body>
+<!--在此处引入bundle.js-->
+<script src="./res/js/main.bundle.js"></script>
+<!--页面脚本-->
+<script>
+    function changeInfos(){
+        // 更换提示内容 依赖于v-if | v-show(better)
+        var divNode = document.getElementById("info");
+        var h1Node = divNode.getElementsByTagName("h1");
+        var pNode = divNode.getElementsByTagName("p");
+        //console.log(divNode,h1Node,pNode);
+        //console.log(h1Node.innerHTML);
+        h1Node[0].style="color:#ed4014"; // 橙红色-警告色
+        h1Node[0].innerHTML="浏览器不兼容！";
+        pNode[0].innerHTML="您的浏览器不兼容ES6语法，PC端请使用Chrome或火狐等浏览器;";
+        pNode[1].innerHTML="移动端用户请使用腾讯浏览器等浏览器，或直接在手机QQ应用中打开本网址。";
+    }
+    var delayTimemills=4500; // 延迟秒数
+    setTimeout(changeInfos,delayTimemills);
+</script>
+</html>
