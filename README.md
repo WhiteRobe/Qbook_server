@@ -11,14 +11,17 @@
 **Step 1. 环境依赖**
 
 Middleware:
--Tomcat 8.5;
+
+- Tomcat 8.5;
 
 Database:
--MySQL v8.0 兼容 MariaDB v5.5;
+
+- MySQL v8.0 兼容 MariaDB v5.5;
 
 Backend：
--JDK v1.8;
--Servlet v3.1;
+
+- JDK v1.8;
+- Servlet v3.1;
 
 **Step 2. 配置全局参数**
 
