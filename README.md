@@ -1,6 +1,7 @@
 # 快购阅读-后台
 
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/WhiteRobe/Qbook_server/blob/master/LICENSE)
+<a href="https://zenodo.org/badge/latestdoi/193224751"><img src="https://zenodo.org/badge/193224751.svg" alt="DOI"></a>
 
 快购阅读是一个基于Vue和Node.js现代前端框架的SPA项目。此为其后台HTTP服务器。
 
